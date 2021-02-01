@@ -46,7 +46,7 @@ class Dashboard extends CI_Controller
 	}
 	public function proses_add_kategori()
 	{
-		
+		// contoh edit
 	}
 	public function proses_add()
 	{
