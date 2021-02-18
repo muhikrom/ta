@@ -9,5 +9,8 @@
  	{
  		return $this->db->get('tbl_kategori')->result();
  	}
- 	
+ 	public function tambah($object)
+	{
+		$this->db->insert('tbl_kategori',$object);
+	}
  } ?>

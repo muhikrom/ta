@@ -21,7 +21,7 @@ class m_suplier extends CI_Model
 	{
 		$this->db->where('kd_suplier',$kd_suplier)->update('tbl_suplier', $object);
 	}
-	public function delete($kd_suplier)
+	public function hapus($kd_suplier)
 	{
 		$this->db->delete('tbl_suplier',array('kd_suplier' => $kd_suplier ));
 	}

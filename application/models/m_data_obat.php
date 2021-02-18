@@ -16,18 +16,23 @@ class M_data_obat extends CI_Model
 	public function tambah($object)
 	{
 		$this->db->insert('tbl_obat',$object);
-		$this->db->insert('tbl_kategori',$object);
 	}
-	public function hapus($id_obat)
+	public function hapus($kd_obat)
 	{
 		$this->db->delete('tbl_obat',array('kd_obat' => $kd_obat ));
 	}
-	public function getwhere($id_obat)
+	public function getwhere($kd_obat)
 	{
 		return $this->db->where('kd_obat',$kd_obat)->get('tbl_obat')->row();
 	}
-	public function simpan_edit($id_obat, $object)
+	public function simpan_edit($kd_obat, $object)
 	{
 		$this->db->where('kd_obat',$kd_obat)->update('tbl_obat', $object);
+	}
+	public function get_keyword($keyword)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_obat');
+		$this->db->like('nama_obat', $keyword);
 	}
 }

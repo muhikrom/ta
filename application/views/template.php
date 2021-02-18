@@ -10,10 +10,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>AdminLTE 3 | Starter</title>
+  <title>Tugas Akhir</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?php echo base_url('assets/') ?>plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/') ?>plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <!-- Theme style -->
   <link rel="stylesheet" href=" <?php echo base_url('assets/') ?>dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -86,33 +88,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url('backend/dashboard/data_suplier') ?>" class="nav-link">
+                <a href="<?php echo site_url('backend/suplier/index_suplier') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Supplier</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url('backend/dashboard/obat_masuk') ?>" class="nav-link">
+                <a href="<?php echo site_url('backend/data_obat_masuk/index_obat_masuk') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Obat Masuk</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url('backend/dashboard/obat_keluar') ?>" class="nav-link">
+                <a href="<?php echo site_url('backend/data_obat_keluar/index_obat_keluar') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Obat Keluar</p>
                 </a>
               </li>
-              <li class="nav-item">
-              <li class="nav-item">
-            <a href="<?php echo site_url('login/logout') ?>"  class="nav-link">
-              <i class="nav-icon fas fa-power-off"></i>
-              <p>
-                Keluar
-              </p>
-            </a>
-          </li>
             </ul>
+            <li class="nav-item">
+                <a href=""  class="nav-link">
+                  <i class="nav-icon fas fa-briefcase"></i>
+                  <p>
+                    Laporan
+                  </p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="<?php echo site_url('login/logout') ?>"  class="nav-link">
+                  <i class="nav-icon fas fa-power-off"></i>
+                  <p>
+                    Keluar
+                  </p>
+                </a>
+              </li>
           </li>
           
         </ul>
@@ -179,17 +188,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="<?php echo base_url('assets/') ?>plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url('assets/') ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url('assets/') ?>plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?php echo base_url('assets/') ?>plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('assets/') ?>dist/js/adminlte.min.js"></script>
 
-<script src="https://cdn.ckeditor.com/4.13.1/standart/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
+  $(function () {
+    $("#example1").DataTable();
+  });
   CKEDITOR.replace('txtketerangan');
 </script>
 </body>

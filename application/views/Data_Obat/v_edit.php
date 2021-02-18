@@ -2,23 +2,30 @@
             <div class="card">
               <div class="card-body">
                 <div class="card-body">
-                  <form action="<?php echo site_url('backend/Dashboard/proses_edit') ?>" method="post">
+                	<?php echo validation_errors(); ?>
+
+                	<?php if (isset($pesan)) echo $pesan; ?>
+                  <form action="<?php echo site_url('backend/Dashboard/proses_edit') ?>" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="nama_obat">Nama Obat</label>
-						<input type="hidden" name="id_obat" value="<?php echo $isi_form->id_obat ?>">
-						<input type="text" name="nama_obat" id="nama_obat" class="form-control"  value="<?php echo $isi_form->nama_obat ?>">
+						<input type="hidden" name="kd_obat" value="<?php echo $isi_form->kd_obat ?>">
+						<input type="text" name="nama_obat" id="satuan" class="form-control"  value="<?php echo $isi_form->nama_obat ?>">
 					</div>
 					<div class="form-group">
-						<label for="satuan">Satuan</label>
-						<input type="text" name="satuan" id="satuan" class="form-control"  value="<?php echo $isi_form->satuan ?>">
+						<label for="kategori">Kategori</label>
+						<select class="form-control" name="kategori" id="kategori" required>
+							<?php foreach ($data_kategori as $isi) { ?>
+						<option value="<?=$isi->id_kategori;?>"><?=$isi->kategori;?></option>
+					<?php } ?>
+						</select>
 					</div>
 					<div class="form-group">
-						<label for="harga">Harga</label>
-						<input type="number" name="harga" id="harga" class="form-control"  value="<?php echo $isi_form->harga ?>">
-					</div>
-					<div class="form-group">
-						<label for="keterangan">Keterangan</label>
-						<input type="text" name="keterangan" id="keterangan" class="form-control"  value="<?php echo $isi_form->keterangan ?>">
+						<label for="kategori">Satuan</label>
+						<select class="form-control" name="satuan" id="Satuan" required>
+						<?php foreach ($data_satuan as $isi) { ?>
+						<option value="<?=$isi->id_satuan;?>"><?=$isi->satuan;?></option>
+					<?php } ?>
+						</select>
 					</div>
 					<div class="form-group">
 						<button class="btn btn-primary" type="submit">Kirim</button>
